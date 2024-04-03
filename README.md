@@ -1,2 +1,2 @@
 # POO-calculadora
- calculadora orientada a objetos
+ calculadora orientada a objetos em Javascript
