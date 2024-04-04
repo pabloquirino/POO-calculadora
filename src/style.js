@@ -12,7 +12,7 @@ function load() {
 setInterval(load, 700)
 
 
-const buttons = document.querySelectorAll('div.button')
+const buttons = document.querySelectorAll('div.buttons')
 
 buttons.forEach(element => {
     element.addEventListener('click', () => {
