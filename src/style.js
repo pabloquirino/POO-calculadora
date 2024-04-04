@@ -9,7 +9,7 @@ function load() {
     }
 }
 
-setInterval(load, 700)
+setInterval(load, 500)
 
 
 const buttons = document.querySelectorAll('div.buttons')
