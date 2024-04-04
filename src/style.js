@@ -1,3 +1,17 @@
+const display = window.document.querySelector('div.col-span-4')
+
+function load() {
+    if(display.textContent === '') {
+        display.textContent = '|'
+    }
+    else if (display.textContent === '|') {
+        display.textContent = ''
+    }
+}
+
+setInterval(load, 700)
+
+
 const buttons = document.querySelectorAll('div.button')
 
 buttons.forEach(element => {
