@@ -582,8 +582,16 @@ video {
   height: 100vh;
 }
 
+.max-h-424px {
+  max-height: 424px;
+}
+
 .w-80 {
   width: 20rem;
+}
+
+.max-w-280px {
+  max-width: 280px;
 }
 
 .select-none {
@@ -618,6 +626,10 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .rounded-2xl {
