@@ -2,6 +2,7 @@ class Calculator {
 
     constructor() {
         this.Value = display
+        this.reset = 0
     }
 
     clearAllValue() {
@@ -54,6 +55,10 @@ class Calculator {
 
         this.Value.textContent = result
 
+        if (valueArray.length > 2) { // após realizar operação, 'reset' passa a valer 1
+            calc.reset = 1
+        }
+
     }
 
     checkLastDigit(input, Value, reg) {
@@ -70,6 +75,12 @@ class Calculator {
         let input = this.textContent
         let Value = calc.Value.textContent
         let reg = new RegExp('^\\d+$') //verifica se tem só números
+
+        if (calc.reset == 1) {
+            calc.clearAllValue() //limpa display depois de realizar a operação
+        }
+
+        calc.reset = 0 // passa a valer '0', permitindo adicionar outra operação sem limpar a tela
 
         if (input == 'AC') {
            calc.clearAllValue()
