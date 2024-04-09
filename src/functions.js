@@ -76,8 +76,8 @@ class Calculator {
         let Value = calc.Value.textContent
         let reg = new RegExp('^\\d+$') //verifica se tem só números
 
-        if (calc.reset == 1) {
-            calc.clearAllValue() //limpa display depois de realizar a operação
+        if (calc.reset == 1 && reg.test(input)) {
+            calc.clearAllValue() //limpa display após realizar a operação, se reset=1 & o proximo digito for um número
         }
 
         calc.reset = 0 // passa a valer '0', permitindo adicionar outra operação sem limpar a tela
