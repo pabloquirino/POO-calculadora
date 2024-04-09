@@ -2,7 +2,7 @@
 Projeto feito para a prática de programação orientada a objetos, focando em escrever códigos mais limpos e reutilizáveis.
 
 ### Descrição do projeto:
-utilizando métodos para verificação de processos, regex para separar digitos de operações numéricas
+Foi utilizado métodos para verificação de processos, regex para separar digitos de operações numéricas
  
  ### Tecnologias utilizadas:
 
