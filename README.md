@@ -14,6 +14,6 @@ utilizando métodos para verificação de processos, regex para separar digitos 
 https://pabloquirino.github.io/POO-calculadora/src/
 
 ### Captura de tela:
- ![PrintScreen do projeto](./img-readme/torre-de-hanoi.png) 
+ ![PrintScreen do projeto](./PrintSc/calculadora.png) 
 
 
