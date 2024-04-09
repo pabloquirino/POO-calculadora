@@ -4,6 +4,58 @@ class Calculator {
         this.Value = display
     }
 
+    clearAllValue() {
+        this.Value.textContent = ''
+    }
+
+    clearLastValue() {
+        let currentValue = this.Value.textContent
+
+        if(currentValue.length > 0) {
+            this.Value.textContent = currentValue.slice(0, -1)
+        }
+    }
+
+    resolution() {
+
+        let valueString = this.Value.textContent.replace(',', '.') // substituir todas as vírgulas por pontos
+        let valueArray = valueString.split(/([-+*/])/) //separar por operações
+        let result = Number(valueArray[0]) // começar pelo primeiro número (switch/case)
+
+        for (let i = 1; i < valueArray.length; i += 2) { // iterar sobre operadores
+
+            let operator = valueArray[i] 
+            let operand = Number(valueArray[i + 1]) // primeiro número depois do operador
+
+            switch (operator) {
+
+                case '+': 
+                    result += operand
+                    break
+                case '-': 
+                    result -= operand
+                    break
+                case '*':
+                    result *= operand
+                    break
+                case '/': 
+
+                    if (operand !== 0) {
+                        result /= operand
+                    }
+                    else {
+                        this.Value.textContent = `Error: Division by zero`
+                        return 
+                    }
+                    break
+            }
+
+        }
+
+        this.Value.textContent = result
+
+    }
+
     checkLastDigit(input, Value, reg) {
         if ( (!reg.test(input) && !reg.test(Value.substr(Value.length - 1))) ) {
             return true
@@ -19,16 +71,42 @@ class Calculator {
         let Value = calc.Value.textContent
         let reg = new RegExp('^\\d+$') //verifica se tem só números
 
-        //checa se precisa adicionar ou não
-        if (calc.checkLastDigit(input, Value, reg)) {
-            return false
+        if (input == 'AC') {
+           calc.clearAllValue()
         }
 
-        if (Value == '0') {
-            calc.Value.textContent = input
+        else if (input == 'C') {
+            calc.clearLastValue()
         }
+
+        else if (input == '=') {
+
+            calc.resolution()
+
+        }
+
         else {
-            calc.Value.textContent += input
+
+            //checa se adiciona ou não
+            if (calc.checkLastDigit(input, Value, reg)) {
+                return false
+            }
+
+            if (Value == '0') {
+                calc.Value.textContent = input
+            }
+            else {
+                
+                if (calc.Value.textContent == '|') {
+
+                    calc.Value.textContent = ''
+                    calc.Value.textContent += input
+                }
+                else {
+
+                    calc.Value.textContent += input
+                }
+            }
         }
 
     }
