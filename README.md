@@ -17,13 +17,15 @@ Este projeto consiste em uma calculadora básica que oferece funcionalidades pad
 - Apagar último dígito (C)
 - Limpar tela (AC)
 - Resolução de expressões matemáticas complexas
+- Caso seja adicionado um **número** após uma expressão ter sido realizada, o display é limpo e outro dígito é adicionado
+- Caso seja adicionado um **operador** após uma expressão ter sido realizada, a operação prossegue normalmente
 
 ### Métodos Implementados:
-- btnPress(): Adiciona dígitos ao display da calculadora
-- clearAllValue(): Limpa o valor exibido na tela da calculadora
-- clearLastValue(): Remove o último dígito do valor exibido na tela
-- resolution(): Resolve a expressão matemática inserida na calculadora
-- checkLastDigit(input, Value, reg): Verifica se é possível adicionar um dígito à expressão atual, evitando erros de formatação
+- **btnPress()**: Adiciona dígitos ao display da calculadora
+- **clearAllValue()**: Limpa o valor exibido na tela da calculadora
+- **clearLastValue()**: Remove o último dígito do valor exibido na tela
+- **resolution()**: Resolve a expressão matemática inserida na calculadora
+- **checkLastDigit(input, Value, reg)**: Verifica se é possível adicionar um dígito à expressão atual, evitando erros de formatação
 
 ### Veja o site aqui:
 https://pabloquirino.github.io/POO-calculadora/src/
