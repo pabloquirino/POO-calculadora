@@ -21,43 +21,51 @@ class Calculator {
 
         let valueString = this.Value.textContent.replace(',', '.') // substituir todas as vírgulas por pontos
         let valueArray = valueString.split(/([-+*/])/) //separar por operações
-        let result = Number(valueArray[0]) // começar pelo primeiro número (switch/case)
 
         for (let i = 1; i < valueArray.length; i += 2) { // iterar sobre operadores
 
             let operator = valueArray[i] 
             let operand = Number(valueArray[i + 1]) // primeiro número depois do operador
 
-            switch (operator) {
+            if (operator === '*' || operator === '/') {
 
-                case '+': 
-                    result += operand
-                    break
-                case '-': 
-                    result -= operand
-                    break
-                case '*':
-                    result *= operand
-                    break
-                case '/': 
+                if (operator === '*') {
+                    valueArray[i - 1] *= operand
+                }
+                else if (operator !== 0) {
+                    valueArray[i - 1] /= operand
+                }
+                else  {
+                    this.Value.textContent = `Error: Divison by zero`
+                    return
+                }
 
-                    if (operand !== 0) {
-                        result /= operand
-                    }
-                    else {
-                        this.Value.textContent = `Error: Division by zero`
-                        return 
-                    }
-                    break
+                if (valueArray.length > 2) { // após realizar operação, 'reset' passa a valer 1
+                    calc.reset = 1
+                }
+
+                //remover operador e operando do array
+                valueArray.splice(i, 1)
+                valueArray.splice(i, 1)
+                i -= 2 //atualize o índice para continuar na próxima iteração corretamente
             }
+        }
 
+        let result = Number(valueArray[0]) // começar pelo primeiro número (switch/case)
+        for (let i = 1; i < valueArray.length; i += 2) {
+
+            let operator = valueArray[i] 
+            let operand = Number(valueArray[i + 1]) // primeiro número depois do operador
+
+            if (operator === '+') {
+                result += operand
+            }
+            else if(operator === '-') {
+                result -= operand
+            }
         }
 
         this.Value.textContent = result
-
-        if (valueArray.length > 2) { // após realizar operação, 'reset' passa a valer 1
-            calc.reset = 1
-        }
 
     }
 
