@@ -63,6 +63,11 @@ class Calculator {
             else if(operator === '-') {
                 result -= operand
             }
+
+            if (valueArray.length > 2) { // após realizar operação, 'reset' passa a valer 1
+                calc.reset = 1
+            }
+
         }
 
         this.Value.textContent = result
