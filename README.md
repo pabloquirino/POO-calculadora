@@ -22,7 +22,7 @@ Este projeto consiste em uma calculadora básica que oferece funcionalidades pad
 
 ### Métodos Implementados:
 - **btnPress()**: Adiciona dígitos ao display da calculadora
-- **clearAllValue()**: Limpa o valor exibido na tela da calculadora
+- **clearAllValue()**: Limpa o valor exibido no display da calculadora
 - **clearLastValue()**: Remove o último dígito do valor exibido na tela
 - **resolution()**: Resolve a expressão matemática inserida na calculadora
 - **checkLastDigit(input, Value, reg)**: Verifica se é possível adicionar um dígito à expressão atual, evitando erros de formatação
