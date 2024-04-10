@@ -16,7 +16,7 @@ Este projeto consiste em uma calculadora básica que oferece funcionalidades pad
 - Divisão (/) 
 - Apagar último dígito (C)
 - Limpar tela (AC)
-- Resolução de expressões matemáticas complexas
+- Resolução de expressões matemáticas
 - Caso seja adicionado um **número** após uma expressão ter sido realizada, o display é limpo e outro dígito é adicionado
 - Caso seja adicionado um **operador** após uma expressão ter sido realizada, a operação prossegue normalmente
 
