@@ -22,6 +22,14 @@ class Calculator {
         let valueString = this.Value.textContent.replace(',', '.') // substituir todas as vírgulas por pontos
         let valueArray = valueString.split(/([-+*/])/) //separar por operações
 
+        if(valueArray.length < 4) {
+            this.Value.textContent = `error`
+            setTimeout(() => {
+                this.Value.textContent = ''
+            }, 900)
+            return
+        }
+
         for (let i = 1; i < valueArray.length; i += 2) { // iterar sobre operadores
 
             let operator = valueArray[i] 
@@ -63,6 +71,10 @@ class Calculator {
             else if(operator === '-') {
                 result -= operand
             }
+            /*else{
+                this.Value.textContent = 'Operação inválida'
+                return
+            }*/
 
             if (valueArray.length > 2) { // após realizar operação, 'reset' passa a valer 1
                 calc.reset = 1
