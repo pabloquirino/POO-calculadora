@@ -22,7 +22,9 @@ class Calculator {
         let valueString = this.Value.textContent.replace(',', '.') // substituir todas as vírgulas por pontos
         let valueArray = valueString.split(/([-+*/])/) //separar por operações
 
-        if(valueArray.length < 4) {
+        console.log(valueArray)
+
+        if(valueArray.length < 3) {
             this.Value.textContent = `error`
             setTimeout(() => {
                 this.Value.textContent = ''
